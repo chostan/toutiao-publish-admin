@@ -3,7 +3,29 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = []
+const routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login')
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/404')
+  },
+  {
+    path: '/',
+    component: () => import('@/views/layout'),
+    children: [
+      {
+        path: '',
+        name: 'home',
+        component: () => import('@/views/home')
+      }
+    ]
+  },
+  { path: '*', redirect: '/404' }
+]
 
 const router = new VueRouter({
   routes

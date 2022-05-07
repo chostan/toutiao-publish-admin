@@ -3,10 +3,21 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// 权限管理
+import '@/permission'
+
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+// 引入全局样式表
+import '@/styles/index.less'
+
+Vue.use(ElementUI)
+
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app')

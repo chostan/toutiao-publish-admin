@@ -32,11 +32,3 @@ export function deleteImageApi(imageId) {
     url: `/mp/v1_0/user/images/${imageId}`
   })
 }
-// 上传用户头像
-export function uploadUserAvatarApi(data) {
-  return request({
-    method: 'patch',
-    url: '/mp/v1_0/user/photo',
-    data
-  })
-}

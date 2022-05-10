@@ -35,6 +35,7 @@
 <script>
 import { getUserProfileApi } from '@/api/user'
 import AppAside from './components/app-aside.vue'
+import globalBus from '@/utils/golbal-bus'
 
 export default {
   name: 'index',
@@ -50,6 +51,10 @@ export default {
   },
   created() {
     this.loadUserProfile()
+    globalBus.$on('update-user', (data) => {
+      this.user.name = data.name
+      this.user.photo = data.photo
+    })
   },
   methods: {
     async loadUserProfile() {

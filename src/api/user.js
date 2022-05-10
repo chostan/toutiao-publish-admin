@@ -15,7 +15,7 @@ export function getUserProfileApi() {
   })
 }
 // 编辑用户资料
-export function changeUserProfileApi(data) {
+export function updateUserProfileApi(data) {
   return request({
     method: 'patch',
     url: '/mp/v1_0/user/profile',
@@ -28,5 +28,14 @@ export function getFansListApi(params) {
     method: 'get',
     url: '/mp/v1_0/followers',
     params
+  })
+}
+
+// 上传用户头像
+export function updateUserAvatarApi(data) {
+  return request({
+    method: 'patch',
+    url: '/mp/v1_0/user/photo',
+    data
   })
 }

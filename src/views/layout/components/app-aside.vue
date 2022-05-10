@@ -38,13 +38,13 @@ export default {
           icon: 'el-icon-s-home'
         },
         {
-          path: '/article',
+          path: '/content',
           name: '内容管理',
           icon: 'el-icon-document'
         },
         {
-          path: '/image',
-          name: '素材',
+          path: '/material',
+          name: '素材管理',
           icon: 'iconfont icon-image'
         },
         {

@@ -14,6 +14,9 @@ import '@/styles/index.less'
 
 Vue.use(ElementUI)
 
+// 添加全局事件总线
+Vue.prototype.$bus = new Vue()
+
 Vue.config.productionTip = false
 
 new Vue({

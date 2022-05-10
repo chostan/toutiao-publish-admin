@@ -1,9 +1,20 @@
 import axios from 'axios'
 import store from '@/store'
+import JSONbig from 'json-bigint'
 
 const request = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
-  timeout: 5000
+  timeout: 5000,
+  transformResponse: [
+    function (data) {
+      try {
+        return JSONbig.parse(data)
+      } catch (err) {
+        // console.log('转换失败', err)
+        return data
+      }
+    }
+  ]
 })
 
 request.interceptors.request.use(

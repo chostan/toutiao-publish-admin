@@ -6,7 +6,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userInfo: getItem('toutiao-user') || {}
+    userInfo: getItem('toutiao-user') || {},
+    // 是否该变/content的页码
+    contentPage: null
   },
   getters: {},
   mutations: {
@@ -17,6 +19,9 @@ export default new Vuex.Store({
     removeUserInfo(state) {
       state.userInfo = null
       removeItem('toutiao-user')
+    },
+    setContentPage(state, page) {
+      state.contentPage = page
     }
   },
   actions: {},

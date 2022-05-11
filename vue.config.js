@@ -9,14 +9,14 @@ module.exports = defineConfig({
     config.when(process.env.NODE_ENV === 'production', (config) => {
       // 移除原有默认的入口，添加新的入口文件
       config.entry('app').clear().add('./src/main-prod.js')
-      config.set('externals', {
-        vue: 'Vue',
-        'vue-router': 'VueRouter',
-        axios: 'axios',
-        'element-ui': 'ELEMENT',
-        echarts: 'echarts',
-        nprogress: 'NProgress'
-      })
+      // config.set('externals', {
+      //   vue: 'Vue',
+      //   'vue-router': 'VueRouter',
+      //   axios: 'axios',
+      //   'element-ui': 'ELEMENT',
+      //   echarts: 'echarts',
+      //   nprogress: 'NProgress'
+      // })
     })
     config.when(process.env.NODE_ENV === 'development', (config) => {
       config.entry('app').clear().add('./src/main.js')

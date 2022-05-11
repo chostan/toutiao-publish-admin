@@ -2,12 +2,26 @@
   <div class="login-container">
     <div class="login-box">
       <h3 class="login-box-head">芝码头条后台管理系统</h3>
-      <el-form ref="loginFormRef" :model="user" :rules="loginFormRules">
+      <el-form
+        class="login-form"
+        ref="loginFormRef"
+        :model="user"
+        :rules="loginFormRules"
+        status-icon
+      >
         <el-form-item prop="mobile">
-          <el-input v-model="user.mobile" placeholder="请输入手机号"></el-input>
+          <el-input
+            prefix-icon="el-icon-mobile-phone"
+            v-model="user.mobile"
+            placeholder="请输入手机号"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="code">
-          <el-input v-model="user.code" placeholder="请输入验证码"></el-input>
+          <el-input
+            prefix-icon="el-icon-lock"
+            v-model="user.code"
+            placeholder="请输入验证码"
+          ></el-input>
         </el-form-item>
         <el-form-item class="btns">
           <el-button
@@ -122,6 +136,11 @@ export default {
       margin-bottom: 20px;
       color: #3c9cfb;
       text-align: center;
+    }
+    .login-form {
+      /deep/ .el-input__suffix {
+        color: #76d927;
+      }
     }
     .btns {
       display: flex;

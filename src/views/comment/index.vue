@@ -39,7 +39,7 @@
         :page-size="perPage"
         :total="totalCount"
         background
-        layout="total, sizes, prev, pager, next, jumper"
+        layout="prev, pager, next, jumper, ->, sizes, total"
         @size-change="handleSizeChange"
         @current-change="loadArticles"
       >

@@ -31,6 +31,17 @@ export function getFansListApi(params) {
   })
 }
 
+// 关注用户
+export function followUserApi(target) {
+  return request({
+    method: 'post',
+    url: '/mp/v1_0/user/followings',
+    data: {
+      target
+    }
+  })
+}
+
 // 上传用户头像
 export function updateUserAvatarApi(data) {
   return request({

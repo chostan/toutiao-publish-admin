@@ -60,7 +60,16 @@ export default {
             trigger: 'blur'
           }
         ]
-      }
+      },
+      redirect: undefined
+    }
+  },
+  watch: {
+    $route: {
+      handler: function (route) {
+        this.redirect = route.query && route.query.redirect
+      },
+      immediate: true
     }
   },
   methods: {
@@ -73,9 +82,10 @@ export default {
           const { data } = await loginApi(this.user)
 
           this.$store.commit('setUserInfo', data)
-          this.$router.push({
-            path: this.$route.query.redirect || '/'
-          })
+          // this.$router.push({
+          //   path: this.$route.query.redirect || '/'
+          // })
+          this.$router.push('/')
 
           this.$message.success('登录成功')
         } catch (err) {

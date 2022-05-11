@@ -99,7 +99,9 @@ export default {
           // this.$router.push({
           //   path: this.$route.query.redirect || '/'
           // })
-          this.$router.push('/')
+          this.$router.replace({
+            path: this.$route.query.redirect || '/layout'
+          })
 
           this.$message.success('登录成功')
         } catch (err) {

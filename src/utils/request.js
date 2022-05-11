@@ -5,15 +5,11 @@ import JSONbig from 'json-bigint'
 import { Message } from 'element-ui'
 
 function redirectLogin() {
-  router.replace({
-    name: 'login',
-    // 传递查询参数
-    query: {
-      // 数据名是自己起的
-      // router.currentRoute和我们在组件中的this.$route是一个东西
-      redirect: router.currentRoute.fullPath
-    }
-  })
+  const fullPath = router.currentRoute.fullPath
+  if (fullPath.indexOf('redirect') !== -1) {
+    return
+  }
+  router.replace({ path: `/login?redirect=${fullPath}` })
 }
 
 const request = axios.create({

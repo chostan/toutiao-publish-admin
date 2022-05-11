@@ -13,6 +13,7 @@ module.exports = defineConfig({
         vue: 'Vue',
         'vue-router': 'VueRouter',
         axios: 'axios',
+        'element-ui': 'ElementUI',
         echarts: 'echarts',
         nprogress: 'NProgress'
       })
